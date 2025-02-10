@@ -52,7 +52,7 @@ print(exchange_token,lot_size,tradingsymbol,dhan_segment)
 
 
 from dhanhq import dhanhq
-client_id='1101112645'
+client_id='110111264'
 access_token='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzM5NTIwNTY2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMTExMjY0NSJ9.tgEc6XqJPRTKVjSHlbKYxS9d-Dj9-XeTLxg_LOcbYzYLzq4TBky55tuqBwgZ5IpRGXAm9GJO0ORc34-rEq6w5A'
 
 
@@ -136,7 +136,7 @@ print(exchange_token,lot_size,tradingsymbol,dhan_segment)
 
 
 from dhanhq import dhanhq
-client_id='1101112645'
+client_id='110111264'
 access_token='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzM5NTIwNTY2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMTExMjY0NSJ9.tgEc6XqJPRTKVjSHlbKYxS9d-Dj9-XeTLxg_LOcbYzYLzq4TBky55tuqBwgZ5IpRGXAm9GJO0ORc34-rEq6w5A'
 
 
