@@ -41,4 +41,9 @@ file="option_trading.xlsx"
 # Save combined data to a single CSV file
 option.to_excel(file, index=False)
 
+
+#Download the file
+from google.colab import files
+files.download(file)
+
 print(option)
