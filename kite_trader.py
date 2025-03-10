@@ -1,23 +1,14 @@
 import pandas as pd
-
 def filter_data(name, segment):
-
     df = pd.read_csv('https://api.kite.trade/instruments')
 # Filtering the required segments
-    
     df = df[df["segment"].isin(["NFO-OPT", "BFO-OPT", "MCX-OPT"])]
-    
-    
     df['strike']=df['strike'].astype(int)
     df = df[(df['name'] == name) & (df['segment'] == segment)]
     current_expiry = df.iloc[0, 5]
     df = df[(df['expiry'] == current_expiry)]
-
     # Convert and format 'expiry' column in one line
     df['expiry'] = pd.to_datetime(df['expiry']).dt.strftime('%d-%m-%Y')
-
-
-    
     return df
 
 # Filter NIFTY options
@@ -29,13 +20,9 @@ bankex_data = filter_data("BANKEX", "BFO-OPT")
 
 # basic_codes
 option = pd.concat([nifty_data, banknifty_data, finnifty_data, sensex_data, bankex_data], ignore_index=True)
-
-
 # Save combined data to a single CSV file
 option.to_excel("current_trading.xlsx", index=False)
-
 print(option)
-
 
 #Download the file
 from google.colab import files
