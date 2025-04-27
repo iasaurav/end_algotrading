@@ -51,3 +51,8 @@ if isinstance(response, dict):
     daf.to_excel("fyers_token_response.xlsx", index=False)
 
 
+#Download the file
+from google.colab import files
+files.download("fyers_token_response.xlsx")
+
+
