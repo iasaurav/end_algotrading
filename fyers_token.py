@@ -48,11 +48,36 @@ import pandas as pd
 if isinstance(response, dict):
     daf = pd.DataFrame([response])  # Wrap in list to create a single-row dataframe
     daf=daf[['access_token','code','message']]
-    daf.to_excel("fyers_token_response.xlsx", index=False)
+    daf['access_token']=app_id+":"+access_token
+    daf=daf[['access_token']]
+    access_token=daf.iloc[0,0]
+    #daf.to_excel("fyers_token_response.xlsx", index=False)
+
+
+
+
+
+url='https://api.kite.trade/instruments'
+# Replace 'your_file.csv' with your actual CSV file path
+df = pd.read_csv(url)
+df = df.drop(columns=['last_price','tick_size'])
+
+df['strike']=df['strike'].astype(int)
+df['token']=access_token
+df  = df[df['segment'].isin(['NFO-OPT', 'BFO-OPT'])]
+option = df[
+    ((df['segment'] == 'NFO-OPT') & (df['name'].isin(['NIFTY', 'BANKNIFTY', 'FINNIFTY']))) |
+    ((df['segment'] == 'BFO-OPT') & (df['name'].isin(['SENSEX', 'BANKEX']))) 
+    
+]
+option.to_excel('option.xlsx', index=False)
+print(df)
+
+
 
 
 #Download the file
 from google.colab import files
-files.download("fyers_token_response.xlsx")
+files.download("option.xlsx")
 
 
