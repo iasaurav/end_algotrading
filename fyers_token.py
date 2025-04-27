@@ -48,6 +48,7 @@ import pandas as pd
 if isinstance(response, dict):
     daf = pd.DataFrame([response])  # Wrap in list to create a single-row dataframe
     daf=daf[['access_token','code','message']]
+    daf['access_token']=app_id+":"+daf['access_token']
     daf.to_excel("fyers_token_response.xlsx", index=False)
 
 
